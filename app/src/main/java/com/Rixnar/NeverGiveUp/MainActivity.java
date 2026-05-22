@@ -424,13 +424,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void enableFullscreen() {
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        getWindow().getAttributes().layoutInDisplayCutoutMode =
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(Color.TRANSPARENT);
+        
+        WindowCompat.setDecorFitsSystemWindows(window, false);
+        window.getAttributes().layoutInDisplayCutoutMode =
                 WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
-        WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
+        
+        WindowInsetsControllerCompat controller = new WindowInsetsControllerCompat(window, window.getDecorView());
         controller.setSystemBarsBehavior(WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
-        controller.hide(WindowInsetsCompat.Type.statusBars());
+        // Do not hide status bars here if the user wants them visible but themed.
+        // If they want them hidden, keep it.
+        // Based on the "blue bar" request, it's likely they are visible but blue.
     }
 
     private void setupBottomNavigation() {

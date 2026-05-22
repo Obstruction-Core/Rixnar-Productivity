@@ -42,7 +42,12 @@ public class RelentlessAccessibility extends AccessibilityService {
     }
 
     private void handleAccessibilityEvent(AccessibilityEvent event) {
-        if (event.getEventType() != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) return;
+        int eventType = event.getEventType();
+        if (eventType != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED && 
+            eventType != AccessibilityEvent.TYPE_VIEW_CLICKED &&
+            eventType != AccessibilityEvent.TYPE_VIEW_FOCUSED &&
+            eventType != AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED) return;
+
         if (event.getPackageName() == null) return;
         
         String pkg = event.getPackageName().toString();
@@ -80,17 +85,21 @@ public class RelentlessAccessibility extends AccessibilityService {
                 if (dpm != null && dpm.isAdminActive(adminComponent)) {
                     CharSequence className = event.getClassName();
                     String eventText = event.getText().toString().toLowerCase();
+                    String contentDesc = event.getContentDescription() != null ? event.getContentDescription().toString().toLowerCase() : "";
                     
                     if (className != null) {
                         String cls = className.toString().toLowerCase();
-                        // If it's a device admin, accessibility, or force-stop related screen, block it.
+                        // Broad detection for accessibility and security screens
                         if (cls.contains("deviceadmin") || 
                             cls.contains("policy") || 
                             cls.contains("security") ||
                             cls.contains("accessibility") ||
                             cls.contains("forcedisplay") ||
                             cls.contains("forcestop") ||
-                            (cls.contains("settings") && (eventText.contains("rixnar") || eventText.contains("relentless")))) {
+                            eventText.contains("rixnar") || 
+                            eventText.contains("relentless") ||
+                            contentDesc.contains("rixnar") ||
+                            contentDesc.contains("relentless")) {
                             
                             goHome();
                             Log.i("RelentlessAcc", "Blocked access to settings to prevent service removal.");
@@ -98,10 +107,9 @@ public class RelentlessAccessibility extends AccessibilityService {
                         }
                     }
 
-                    // Secondary check: if the screen title/content mentions the app and we are in settings
-                    if (eventText.contains("rixnar") || eventText.contains("relentless")) {
+                    // Secondary check: if anything on screen mentions the app while in settings
+                    if (eventText.contains("rixnar") || eventText.contains("relentless") || contentDesc.contains("rixnar")) {
                         goHome();
-                        Log.i("RelentlessAcc", "Blocked access to app-specific setting toggle.");
                         return;
                     }
                 }
@@ -115,7 +123,15 @@ public class RelentlessAccessibility extends AccessibilityService {
             return;
         }
 
+        // 3. Blocking Logic
+        // Force block Chrome and common browsers if native fails
+        if (pkg.equals("com.android.chrome") || pkg.equals("com.chrome.beta") || pkg.equals("com.chrome.dev")) {
+            goHome();
+            return;
+        }
+
         int status = checkAppStatus(pkg);
+
         if (prefs.getStringSet("extra_browsers", new HashSet<>()).contains(pkg)) {
             status = 2;
         } else if (status == 0 && prefs.getStringSet("extra_social", new HashSet<>()).contains(pkg)) {
