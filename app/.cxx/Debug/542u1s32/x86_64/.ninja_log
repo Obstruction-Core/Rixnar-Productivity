@@ -1,0 +1,5 @@
+# ninja log v5
+3	745	8010356223261803	CMakeFiles/relentless.dir/native-lib.cpp.o	54397143138228ce
+746	867	8010356224380930	C:/Work/Relentless/Relentless/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/librelentless.so	80d09dd313cb572f
+1	739	8010440792788718	CMakeFiles/rixnar.dir/native-lib.cpp.o	91e59aea277fc567
+740	815	8010440793514453	C:/Work/Relentless/Relentless/app/build/intermediates/cxx/Debug/542u1s32/obj/x86_64/librixnar.so	2cbdfbbeadf3dc87

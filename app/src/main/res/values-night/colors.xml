@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Brand Colors (Signature Dark Theme) -->
+    <color name="brand_green">#4CAF50</color>
+    <color name="brand_green_dark">#2E7D32</color>
+    <color name="brand_green_muted">#1A4CAF50</color>
+
+    <color name="brand_gold">#FFB300</color>
+    <color name="brand_red">#E57373</color>
+    <color name="bright_yellow">#FFD600</color>
+
+    <!-- Premium Dark Surface Colors -->
+    <color name="bg_main">#0A0A0A</color>
+    <color name="surface_card">#141414</color>
+    <color name="surface_card_light">#1E1E1E</color>
+    <color name="surface_stroke">#262626</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#F5F5F5</color>
+    <color name="text_secondary">#888888</color>
+    <color name="text_muted">#444444</color>
+
+    <!-- Fixed Colors (Always stay same) -->
+    <color name="absolute_white">#FFFFFF</color>
+    <color name="absolute_black">#000000</color>
+</resources>

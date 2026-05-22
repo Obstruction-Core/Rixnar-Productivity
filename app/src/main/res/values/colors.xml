@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Brand Colors (Optimized for Light Mode) -->
+    <color name="brand_green">#1B5E20</color>
+    <color name="brand_green_dark">#0D3D10</color>
+    <color name="brand_green_muted">#1A1B5E20</color>
+
+    <color name="brand_gold">#E65100</color>
+    <color name="brand_red">#B71C1C</color>
+    <color name="bright_yellow">#FFD600</color>
+
+    <!-- Light Surface Colors -->
+    <color name="bg_main">#FFFFFF</color>
+    <color name="surface_card">#F2F2F7</color>
+    <color name="surface_card_light">#E5E5EA</color>
+    <color name="surface_stroke">#D1D1D6</color>
+
+    <!-- Text Colors (High Contrast for Light Mode) -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#3C3C43</color>
+    <color name="text_muted">#8E8E93</color>
+
+    <!-- Fixed Colors (Always stay same) -->
+    <color name="absolute_white">#FFFFFF</color>
+    <color name="absolute_black">#000000</color>
+</resources>

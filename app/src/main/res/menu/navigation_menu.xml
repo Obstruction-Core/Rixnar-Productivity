@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+    </group>
+
+    <item android:title="Configuration">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:title="General Settings" />
+            <item
+                android:id="@+id/nav_device_admin"
+                android:title="Device Admin Link" />
+        </menu>
+    </item>
+
+    <item android:title="Backup &amp; Restore">
+        <menu>
+            <item
+                android:id="@+id/nav_export"
+                android:title="Export Backup" />
+            <item
+                android:id="@+id/nav_import"
+                android:title="Import Backup" />
+        </menu>
+    </item>
+
+    <item android:title="Support &amp; Community">
+        <menu>
+            <item
+                android:id="@+id/nav_help"
+                android:title="Help &amp; Documentation" />
+            <item
+                android:id="@+id/nav_support_dev"
+                android:icon="@drawable/ic_gpay"
+                android:title="Support the Dev" />
+        </menu>
+    </item>
+
+</menu>

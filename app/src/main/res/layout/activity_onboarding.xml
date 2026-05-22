@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:padding="24dp">
+
+    <!-- Header Section -->
+    <TextView
+        android:id="@+id/tvHeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RIXNAR"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/brand_green"
+        android:letterSpacing="0.2"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/tvHeaderSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ELIMINATE DISTRACTION. ACHIEVE FOCUS."
+        android:textSize="10sp"
+        android:textColor="@color/text_muted"
+        android:letterSpacing="0.1"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvHeaderTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/>
+
+    <View
+        android:id="@+id/headerDivider"
+        android:layout_width="40dp"
+        android:layout_height="2dp"
+        android:background="@color/brand_green"
+        app:layout_constraintTop_toBottomOf="@id/tvHeaderSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Content Area Guideline to push content down a bit from header -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
+
+    <!-- Step 1: Duration Selection -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stepDuration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/guideHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvStep1Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Commitment Duration"
+            android:textSize="20sp"
+            android:textColor="@color/text_primary"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvStep1Info"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <TextView
+            android:id="@+id/tvStep1Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How long do you intend to lock your devices?"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStep1Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnSet1Day"/>
+
+        <Button
+            android:id="@+id/btnSet1Day"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Short Term: 24 Hours"
+            android:textSize="14sp"
+            android:textColor="@color/absolute_white"
+            android:background="@drawable/card_bg"
+            android:layout_marginTop="24dp"
+            android:textAllCaps="false"
+            app:layout_constraintHeight_min="52dp"
+            app:layout_constraintHeight_max="60dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStep1Info"
+            app:layout_constraintBottom_toTopOf="@id/btnSet7Days"/>
+
+        <Button
+            android:id="@+id/btnSet7Days"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Standard: 7 Days"
+            android:textSize="14sp"
+            android:textColor="@color/absolute_white"
+            android:background="@drawable/card_bg"
+            android:layout_marginTop="12dp"
+            android:textAllCaps="false"
+            app:layout_constraintHeight_min="52dp"
+            app:layout_constraintHeight_max="60dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSet1Day"
+            app:layout_constraintBottom_toTopOf="@id/btnSet30Days"/>
+
+        <Button
+            android:id="@+id/btnSet30Days"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Discipline: 30 Days"
+            android:textSize="14sp"
+            android:textColor="@color/absolute_white"
+            android:background="@drawable/card_bg"
+            android:layout_marginTop="12dp"
+            android:textAllCaps="false"
+            app:layout_constraintHeight_min="52dp"
+            app:layout_constraintHeight_max="60dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSet7Days"
+            app:layout_constraintBottom_toTopOf="@id/btnSetCustom"/>
+
+        <Button
+            android:id="@+id/btnSetCustom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Hard Mode: Custom End Date"
+            android:textSize="14sp"
+            android:textColor="@color/brand_gold"
+            android:background="@drawable/card_bg"
+            android:layout_marginTop="12dp"
+            android:textAllCaps="false"
+            app:layout_constraintHeight_min="52dp"
+            app:layout_constraintHeight_max="60dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSet30Days"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Step 2: Master Key Display -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stepKey"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/guideHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvStep2Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SECURE YOUR KEY"
+            android:textSize="18sp"
+            android:textColor="@color/brand_gold"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ivQRCode"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <ImageView
+            android:id="@+id/ivQRCode"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="8dp"
+            android:background="@color/absolute_white"
+            android:contentDescription="Master Key QR Code"
+            android:layout_marginTop="16dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintHeight_percent="0.35"
+            app:layout_constraintHeight_max="220dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStep2Title"
+            app:layout_constraintBottom_toTopOf="@id/tvStep2Info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvStep2Info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ivQRCode"
+            app:layout_constraintBottom_toTopOf="@id/btnShareKey"/>
+
+        <Button
+            android:id="@+id/btnShareKey"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Export Key via Share"
+            android:textSize="14sp"
+            android:textColor="@color/absolute_white"
+            android:background="@drawable/btn_bg"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/tvStep2Info"
+            app:layout_constraintBottom_toTopOf="@id/btnSaveKey"/>
+
+        <Button
+            android:id="@+id/btnSaveKey"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="Copy Key &amp; Proceed"
+            android:textSize="14sp"
+            android:textColor="@color/absolute_white"
+            android:background="@drawable/btn_bg"
+            android:layout_marginTop="12dp"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/btnShareKey"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Step 3: Verification -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stepVerify"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/guideHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvStep3Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify Integrity"
+            android:textSize="20sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvStep3Info"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <TextView
+            android:id="@+id/tvStep3Info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm your master key to finalize setup."
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStep3Title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/etVerifyCode"/>
+
+        <EditText
+            android:id="@+id/etVerifyCode"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Paste master key here"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_muted"
+            android:background="@drawable/card_bg"
+            android:paddingHorizontal="16dp"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStep3Info"
+            app:layout_constraintBottom_toTopOf="@id/btnVerify"/>
+
+        <Button
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Confirm Identity"
+            android:textSize="14sp"
+            android:textColor="@color/absolute_white"
+            android:background="@drawable/btn_bg"
+            android:layout_marginTop="24dp"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/etVerifyCode"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Step 4: Done -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stepDone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/guideHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvStepDoneTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✓ RIXNAR INITIALIZED"
+            android:textSize="24sp"
+            android:textColor="@color/brand_green"
+            android:fontFamily="sans-serif-black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvStepDoneInfo"
+            app:layout_constraintVertical_chainStyle="packed"/>
+
+        <TextView
+            android:id="@+id/tvStepDoneInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your environment is now secured.\nThe master key is now the only way back."
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStepDoneTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnStartApp"/>
+
+        <Button
+            android:id="@+id/btnStartApp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Enter Console"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/absolute_white"
+            android:background="@drawable/btn_bg"
+            android:layout_marginTop="40dp"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/tvStepDoneInfo"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
