@@ -179,7 +179,7 @@ app/src/main/
 - Android Studio Ladybug / Panda or later
 - NDK 28.x (Side by side) — install via SDK Manager → SDK Tools
 - CMake 3.22.1 — install via SDK Manager → SDK Tools
-- Min SDK: API 26 (Android 8.0)
+- Min SDK: API 30 (Android 11)
 - Target SDK: API 36 (Android 16)
 
 ### Steps
@@ -341,11 +341,7 @@ You will likely see one or both of the following prompts:
 
 To install Rixnar you must enable sideloading on your device:
 
-```
-Android 8+:   Settings → Apps → Special app access → Install unknown apps
-              → Select your file manager or browser → Allow from this source
-
-Android 12+:  You may additionally need to confirm "Restricted Settings" for
+Android 11+:  You may additionally need to confirm "Restricted Settings" for
               Accessibility and Device Admin permissions after installation.
 ```
 
