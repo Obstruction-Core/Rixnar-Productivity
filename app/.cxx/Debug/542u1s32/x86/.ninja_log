@@ -1,5 +1,0 @@
-# ninja log v5
-795	897	8010356215455870	C:/Work/Relentless/Relentless/app/build/intermediates/cxx/Debug/542u1s32/obj/x86/librelentless.so	a2b97cada3a8819c
-4	795	8010356214463354	CMakeFiles/relentless.dir/native-lib.cpp.o	26f1ca41be67d999
-0	923	8010440782620340	CMakeFiles/rixnar.dir/native-lib.cpp.o	1eeace9067f1883c
-924	1019	8010440783482721	C:/Work/Relentless/Relentless/app/build/intermediates/cxx/Debug/542u1s32/obj/x86/librixnar.so	37b087c57fc8571a

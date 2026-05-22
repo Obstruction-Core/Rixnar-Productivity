@@ -1,3 +1,0 @@
-C:/Work/Relentless/Relentless/app/.cxx/RelWithDebInfo/48613r72/armeabi-v7a/CMakeFiles/rixnar.dir
-C:/Work/Relentless/Relentless/app/.cxx/RelWithDebInfo/48613r72/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/Work/Relentless/Relentless/app/.cxx/RelWithDebInfo/48613r72/armeabi-v7a/CMakeFiles/rebuild_cache.dir
