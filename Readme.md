@@ -409,7 +409,7 @@ The GPL v3 license ensures this software and all derivative works remain permane
 
 See the full license text at [https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html).
 
----
+```
 
 <div align="center">
 
