@@ -6,7 +6,7 @@
 <br/>
 <br/>
 
-<img src="https://img.shields.io/badge/Platform-Android%2016%2B-brightgreen?style=for-the-badge&logo=android&logoColor=white"/>
+<img src="https://img.shields.io/badge/Platform-Android%2011%2B-brightgreen?style=for-the-badge&logo=android&logoColor=white"/>
 <img src="https://img.shields.io/badge/Language-Java%20%2F%20C%2B%2B-orange?style=for-the-badge&logo=c%2B%2B&logoColor=white"/>
 <img src="https://img.shields.io/badge/Architecture-Native%20JNI-blue?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/License-GPL%20v3-informational?style=for-the-badge&logo=gnu&logoColor=white"/>
